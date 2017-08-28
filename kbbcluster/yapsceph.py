@@ -43,20 +43,25 @@ def _cephGetTree():
 	tree = json.loads(tree_json)
 	return tree
 
+
+argparserbase = argparse.ArgumentParser(add_help=False)
+argparserbase.add_argument("objtype", choices=['osd'],help="which object-type to work on")
+
 class NoArgs:
 	def args(self):
-		argparser = argparse.ArgumentParser(add_help=False)
+		argparser = argparse.ArgumentParser(parents=[argparserbase])
 		argparser.add_argument("objtype", choices=['osd'],help="which object-type to work on")
 		return argparser
 
 	def run(self):
+		args = self.args().parse_args()
 		print( 'no args - doing nothing')
 
 class yapsOsd:
 	def args(self):
-		argparser = argparse.ArgumentParser( parents=[NoArgs().args()] )
-		argparser.add_argument("method",choices=['rm','dump'],help="which method to use")
-		argparser.add_argument("--osd",type=int,help="which osd to work on")
+		argparser = argparse.ArgumentParser(parents=[argparserbase])
+		argparser.add_argument("method",choices=['rm','dump','create_withlog'],help="which method to use")
+		argparser.add_argument("--osd",  type=int, help="which osd to work on")
 
 		return argparser
 	
