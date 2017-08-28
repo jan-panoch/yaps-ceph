@@ -81,7 +81,7 @@ class yapsOsd:
 
 	# this is an implementation to remove osd
 	def rm(self,args):
-		if not args.osd:
+		if "" == str(args.osd):
 			sys.exit("no --osd given")
 		tree = _cephGetTree()
 #		pprint.pprint(tree['nodes'])
