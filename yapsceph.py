@@ -7,6 +7,12 @@ import subprocess
 import sys
 
 
+# try -h for info
+# intended at least to easily remove osd from cluster
+# watch out - this programm always assumes --yes-i-really-mean-it
+
+
+
 CEPH_BIN = '/usr/bin/ceph'
 
 
