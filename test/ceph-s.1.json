@@ -1,0 +1,151 @@
+
+{
+    "fsid": "b60f36a0-1a2d-4b66-8cf5-c0a83773b59d",
+    "health": {
+        "checks": {},
+        "status": "HEALTH_OK",
+        "overall_status": "HEALTH_WARN"
+    },
+    "election_epoch": 148,
+    "quorum": [
+        0,
+        1,
+        2
+    ],
+    "quorum_names": [
+        "kbbceph01",
+        "kbbceph02",
+        "kbbceph03"
+    ],
+    "monmap": {
+        "epoch": 3,
+        "fsid": "b60f36a0-1a2d-4b66-8cf5-c0a83773b59d",
+        "modified": "2017-08-07 15:55:54.699325",
+        "created": "2017-06-19 14:01:27.080746",
+        "features": {
+            "persistent": [
+                "kraken",
+                "luminous"
+            ],
+            "optional": []
+        },
+        "mons": [
+            {
+                "rank": 0,
+                "name": "kbbceph01",
+                "addr": "192.168.234.101:6789/0",
+                "public_addr": "192.168.234.101:6789/0"
+            },
+            {
+                "rank": 1,
+                "name": "kbbceph02",
+                "addr": "192.168.234.102:6789/0",
+                "public_addr": "192.168.234.102:6789/0"
+            },
+            {
+                "rank": 2,
+                "name": "kbbceph03",
+                "addr": "192.168.234.103:6789/0",
+                "public_addr": "192.168.234.103:6789/0"
+            }
+        ]
+    },
+    "osdmap": {
+        "osdmap": {
+            "epoch": 18741,
+            "num_osds": 42,
+            "num_up_osds": 42,
+            "num_in_osds": 42,
+            "full": false,
+            "nearfull": false,
+            "num_remapped_pgs": 0
+        }
+    },
+    "pgmap": {
+        "pgs_by_state": [
+            {
+                "state_name": "active+clean",
+                "count": 4750
+            },
+            {
+                "state_name": "active+clean+scrubbing+deep",
+                "count": 2
+            }
+        ],
+        "num_pgs": 4752,
+        "num_pools": 8,
+        "num_objects": 4441478,
+        "data_bytes": 18616265845489,
+        "bytes_used": 37352587743232,
+        "bytes_avail": 239552926695424,
+        "bytes_total": 276905514438656,
+        "read_bytes_sec": 339,
+        "write_bytes_sec": 43686,
+        "read_op_per_sec": 0,
+        "write_op_per_sec": 11
+    },
+    "fsmap": {
+        "epoch": 44,
+        "id": 2,
+        "up": 1,
+        "in": 1,
+        "max": 1,
+        "by_rank": [
+            {
+                "filesystem_id": 2,
+                "rank": 0,
+                "name": "kbbceph06",
+                "status": "up:active"
+            }
+        ],
+        "up:standby": 2
+    },
+    "mgrmap": {
+        "epoch": 1452,
+        "active_gid": 11744145,
+        "active_name": "kbbceph01",
+        "active_addr": "192.168.234.101:6814/12258",
+        "available": true,
+        "standbys": [
+            {
+                "gid": 11692959,
+                "name": "kbbceph03",
+                "available_modules": [
+                    "dashboard",
+                    "prometheus",
+                    "restful",
+                    "status",
+                    "zabbix"
+                ]
+            },
+            {
+                "gid": 11715272,
+                "name": "kbbceph02",
+                "available_modules": [
+                    "dashboard",
+                    "prometheus",
+                    "restful",
+                    "status",
+                    "zabbix"
+                ]
+            }
+        ],
+        "modules": [
+            "dashboard",
+            "restful",
+            "status"
+        ],
+        "available_modules": [
+            "dashboard",
+            "prometheus",
+            "restful",
+            "status",
+            "zabbix"
+        ]
+    },
+    "servicemap": {
+        "epoch": 0,
+        "modified": "0.000000",
+        "services": {}
+    }
+}
