@@ -71,11 +71,21 @@ def main(sJson):
         'value' : i,
     } )
 
-    print( json.dumps({
+    for c in ['bytes_used','bytes_avail',
+            'read_bytes_sec','write_bytes_sec','read_op_per_sec','write_op_per_sec']:
+        channels.append( {
+            'channel': c,
+            'value': j['pgmap'].get(c,0)
+        } )
+
+
+
+
+    print( json.dumps( {'prtg' : {
         'error' : e,
         'text' : m,
         'result' : channels
-    }) )
+    } }) )
     
     return
 
