@@ -53,10 +53,13 @@ def main(sJson):
 
     channels = []
     e = 0
+    m = ''
     h = { 
         'HEALTH_OK' : 0, 'HEALTH_WARN' : 1, 'HEALTH_ERR' : 2 
     }[ j['health']['status'] ]
     e = max(e,h)
+    if e > 0:
+        m += 'situation occured'
     channels.append( { 
         'channel' : 'status', 
         'value' : h
@@ -70,6 +73,7 @@ def main(sJson):
 
     print( json.dumps({
         'error' : e,
+        'text' : m,
         'result' : channels
     }) )
     
