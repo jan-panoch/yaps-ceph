@@ -65,10 +65,10 @@ def main(sJson):
         'value' : h
     } )
 
-    i = j['osdmap']['osdmap']['num_osds'] / j['osdmap']['osdmap']['num_up_osds']
+    i = j['osdmap']['osdmap']['num_osds'] - j['osdmap']['osdmap']['num_up_osds']
     channels.append( {
-        'channel' : 'osds_up',
-        'value' : i
+        'channel' : 'missing_osds',
+        'value' : i,
     } )
 
     print( json.dumps({
