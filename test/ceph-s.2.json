@@ -1,0 +1,184 @@
+
+{
+    "fsid": "b60f36a0-1a2d-4b66-8cf5-c0a83773b59d",
+    "health": {
+        "checks": {
+            "OBJECT_MISPLACED": {
+                "severity": "HEALTH_WARN",
+                "summary": {
+                    "message": "125324/11818688 objects misplaced (1.060%)"
+                }
+            },
+            "PG_DEGRADED": {
+                "severity": "HEALTH_WARN",
+                "summary": {
+                    "message": "Degraded data redundancy: 437643/11818688 objects degraded (3.703%), 205 pgs unclean, 205 pgs degraded"
+                }
+            }
+        },
+        "status": "HEALTH_WARN",
+        "overall_status": "HEALTH_WARN"
+    },
+    "election_epoch": 162,
+    "quorum": [
+        0,
+        1,
+        2
+    ],
+    "quorum_names": [
+        "kbbceph01",
+        "kbbceph02",
+        "kbbceph03"
+    ],
+    "monmap": {
+        "epoch": 3,
+        "fsid": "b60f36a0-1a2d-4b66-8cf5-c0a83773b59d",
+        "modified": "2017-08-07 15:55:54.699325",
+        "created": "2017-06-19 14:01:27.080746",
+        "features": {
+            "persistent": [
+                "kraken",
+                "luminous"
+            ],
+            "optional": []
+        },
+        "mons": [
+            {
+                "rank": 0,
+                "name": "kbbceph01",
+                "addr": "192.168.234.101:6789/0",
+                "public_addr": "192.168.234.101:6789/0"
+            },
+            {
+                "rank": 1,
+                "name": "kbbceph02",
+                "addr": "192.168.234.102:6789/0",
+                "public_addr": "192.168.234.102:6789/0"
+            },
+            {
+                "rank": 2,
+                "name": "kbbceph03",
+                "addr": "192.168.234.103:6789/0",
+                "public_addr": "192.168.234.103:6789/0"
+            }
+        ]
+    },
+    "osdmap": {
+        "osdmap": {
+            "epoch": 18871,
+            "num_osds": 42,
+            "num_up_osds": 41,
+            "num_in_osds": 41,
+            "full": false,
+            "nearfull": false,
+            "num_remapped_pgs": 203
+        }
+    },
+    "pgmap": {
+        "pgs_by_state": [
+            {
+                "state_name": "active+clean",
+                "count": 4547
+            },
+            {
+                "state_name": "active+undersized+degraded+remapped+backfill_wait",
+                "count": 194
+            },
+            {
+                "state_name": "active+undersized+degraded+remapped+backfilling",
+                "count": 9
+            },
+            {
+                "state_name": "active+recovery_wait+degraded",
+                "count": 2
+            }
+        ],
+        "num_pgs": 4752,
+        "num_pools": 8,
+        "num_objects": 5909344,
+        "data_bytes": 24768635990238,
+        "bytes_used": 47827495636992,
+        "bytes_avail": 219076219645952,
+        "bytes_total": 266903715282944,
+        "degraded_objects": 437643,
+        "degraded_total": 11818688,
+        "degraded_ratio": 0.037030,
+        "misplaced_objects": 125324,
+        "misplaced_total": 11818688,
+        "misplaced_ratio": 0.010604,
+        "recovering_objects_per_sec": 95,
+        "recovering_bytes_per_sec": 400417608,
+        "recovering_keys_per_sec": 0,
+        "num_objects_recovered": 1152,
+        "num_bytes_recovered": 4823974400,
+        "num_keys_recovered": 0,
+        "read_bytes_sec": 1614,
+        "write_bytes_sec": 3601445,
+        "read_op_per_sec": 1,
+        "write_op_per_sec": 1093
+    },
+    "fsmap": {
+        "epoch": 54,
+        "id": 2,
+        "up": 1,
+        "in": 1,
+        "max": 1,
+        "by_rank": [
+            {
+                "filesystem_id": 2,
+                "rank": 0,
+                "name": "kbbceph05",
+                "status": "up:active"
+            }
+        ],
+        "up:standby": 2
+    },
+    "mgrmap": {
+        "epoch": 1459,
+        "active_gid": 12654100,
+        "active_name": "kbbceph01",
+        "active_addr": "192.168.234.101:6814/26602",
+        "available": true,
+        "standbys": [
+            {
+                "gid": 12484659,
+                "name": "kbbceph02",
+                "available_modules": [
+                    "dashboard",
+                    "prometheus",
+                    "restful",
+                    "status",
+                    "zabbix"
+                ]
+            },
+            {
+                "gid": 12524377,
+                "name": "kbbceph03",
+                "available_modules": [
+                    "dashboard",
+                    "prometheus",
+                    "restful",
+                    "status",
+                    "zabbix"
+                ]
+            }
+        ],
+        "modules": [
+            "dashboard",
+            "restful",
+            "status"
+        ],
+        "available_modules": [
+            "dashboard",
+            "prometheus",
+            "restful",
+            "status",
+            "zabbix"
+        ]
+    },
+    "servicemap": {
+        "epoch": 0,
+        "modified": "0.000000",
+        "services": {}
+    }
+}
