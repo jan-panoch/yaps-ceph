@@ -1,5 +1,21 @@
 #!/usr/bin/python3
 
+# Copyright 2017 Kulturveranstaltungen des Bundes in Berlin GmbH
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS,
+#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#    See the License for the specific language governing permissions and
+#    limitations under the License.
+
+
+
 import argparse
 import json
 import pprint
@@ -24,32 +40,8 @@ def _exec(args):
 		exit( "ERROR: %s" % error  )
 	return result	
 
-def _getNodeById(lNodeList,iId):
-	for dNode in lNodeList:
-#		pprint.pprint([dNode['id'],iId])
-		if dNode['id'] == iId:
-			return dNode
-	return
-
-#stype sind osd host etc
-def _getNodesByType(lNodeList,sType):
-	retval = []
-	for dNode in lNodeList:
-		if dNode['type'] == sType:
-			retval.append(dNode)
-	return retval
-
-
-
-def _cephGetTree():
-	tree_json = _exec([CEPH_BIN,'osd','tree','-f','json'])	
-	tree = json.loads(tree_json)
-	return tree
-
-
 def main(sJson):
     j = json.loads(sJson)
-    #pprint.pprint(j)
 
     channels = []
     e = 0
@@ -104,9 +96,5 @@ else:
     sJson = _exec([CEPH_BIN,'-s','--format=json'])
 
 main(sJson)
-
-
-#_exec([CEPH_BIN,'osd','crush','remove',dOsd['name']])
-
 
 
