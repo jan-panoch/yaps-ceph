@@ -34,6 +34,8 @@ import sys
 
 CEPH_BIN = '/usr/bin/ceph'
 
+# max fill factor
+CLUSTER_MAX_FILL = 2/3;
 
 def _exec(args):
 	cmd  = subprocess.Popen(args,
@@ -69,7 +71,17 @@ def main(sJson):
         'value' : i,
     } )
 
-    for c in ['bytes_used','bytes_avail',
+    
+    i = int( 
+      j['pgmap'].get('bytes_total',0) * CLUSTER_MAX_FILL 
+      - j['pgmap'].get('bytes_used',0)
+    )
+    channels.append( {
+        'channel': 'bytes_avail',
+        'value': i
+    } )
+
+    for c in ['bytes_used',
             'read_bytes_sec','write_bytes_sec','read_op_per_sec','write_op_per_sec']:
         channels.append( {
             'channel': c,
