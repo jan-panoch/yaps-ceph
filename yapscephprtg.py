@@ -56,7 +56,7 @@ def main(sJson):
     m = ''
     h = { 
         'HEALTH_OK' : 0, 'HEALTH_WARN' : 1, 'HEALTH_ERR' : 2 
-    }[ j['health']['status'] ]
+    }[ j['health']['overall_status'] ]
     e = max(e,h)
     if e > 0:
         m += 'situation occured'
